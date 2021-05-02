@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Item, Header, Button } from "semantic-ui-react";
+import { Item, Header, Button, Card } from "semantic-ui-react";
 import { getMenuItems } from "../modules/menuItemsData.js";
 import { createOrder, updateOrder } from "../modules/orderHelper";
 
@@ -40,22 +40,21 @@ class MenuItemList extends Component {
     );
     let dataIndex = categoryItems.map((item, i) => {
       return (
-        <Item key={item.id} data-cy="menu-listing">
-          <Item.Content
+        <Card fluid key={item.id} data-cy="menu-listing">
+          <Card.Content
             data-cy={`${this.props.tab.slice(
               0,
               -1
             )}-${categoryItems.indexOf(item)}`}
           >
-            <Item.Header data-cy="title">{item.title}</Item.Header>
-            <Item.Description data-cy="description">
+            <Card.Header data-cy="title">{item.title}</Card.Header>
+            <Card.Meta data-cy="description">
               {item.description}
-            </Item.Description>
-            <Item.Description data-cy="size">{item.size}</Item.Description>
+            </Card.Meta>
+            <Card.Description data-cy="size">{item.size}</Card.Description>
             <Item.Extra data-cy="price">{item.price}Kr</Item.Extra>
-            <Item.Extra data-cy="size">{item.size}</Item.Extra>
             {this.props.authenticated && (
-              <Button
+              <Button fluid
                 data-item_id={item.id}
                 data-cy={`order-button-${i + 1}`}
                 onClick={(event) => this.addToOrder(event)}
@@ -63,8 +62,8 @@ class MenuItemList extends Component {
                 Add to cart
               </Button>
             )}
-          </Item.Content>
-        </Item>
+          </Card.Content>
+        </Card>
       );
     });
     return (
@@ -77,7 +76,7 @@ class MenuItemList extends Component {
             the basket
           </p>
         )}
-        <Container>{dataIndex}</Container>
+        <Card.Group >{dataIndex}</Card.Group>
       </>
     );
   }
