@@ -32,7 +32,7 @@ class App extends Component {
             fontSize: "28px",
           }}
         >
-          SLOW-FOOD
+          BAKED-BEANS
         </Header>
         <Menu  pointing tabular secondary >
           <Menu.Item 
