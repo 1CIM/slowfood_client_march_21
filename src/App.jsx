@@ -34,7 +34,7 @@ class App extends Component {
         >
           SLOW-FOOD
         </Header>
-        <Menu pointing secondary>
+        <Menu  pointing tabular secondary >
           <Menu.Item 
             data-cy="starters-button"
             name="Starters"

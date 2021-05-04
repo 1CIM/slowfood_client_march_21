@@ -1,8 +1,16 @@
+body{
+  background-color: rgb(182, 181, 181);
+}
+
+#uppercase {
+  text-transform: capitalize;
+}
+
 .footer {
   margin-top: 1rem;
   padding: 1rem;
   background-color: rgb(235, 195, 64);
-  position: fixed;
+  position: flex;
   bottom: 0;
   left: 0;
   width: 100%;
